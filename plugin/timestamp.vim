@@ -1,7 +1,7 @@
 " TimeStamp 1.21: Vim plugin for automated time stamping and write times counting.
 " Maintainer: icersong <icersong@gmail.com>
-" Created:    TIMESTAMP
-" Modified:   TIMESTAMP
+" Created:    三 10  9 2014 12:05:04 上午 CST
+" Modified:   三 10  9 2014 12:05:04 上午 CST
 " License:    This file is placed in the public domain.
 "
 " Credits:    Thanks to Guido Van Hoecke for writing the original vim script "timstamp.vim".
@@ -165,7 +165,7 @@ function s:timestamp()
     endif
 
     " timestamp counter by icersong
-    call s:timestamp_and_writecounter()
+    " call s:timestamp_and_writecounter()
 endfunction
 
 " {{{1 subst( start, end, pat, rep): substitute on range start - end.
