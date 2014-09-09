@@ -1,7 +1,7 @@
-" TimeStamp 1.21: Vim plugin for automated time stamping and write times counting.
+" TimeStamp 1.22: Vim plugin for automated time stamping and write times counting.
 " Maintainer: icersong <icersong@gmail.com>
-" Created:    三 10  9 2014 12:05:04 上午 CST
-" Modified:   三 10  9 2014 12:05:04 上午 CST
+" Created:    2014-09-10 03:22:20
+" Modified:   2014-09-10 03:24:10 [5]
 " License:    This file is placed in the public domain.
 "
 " Credits:    Thanks to Guido Van Hoecke for writing the original vim script "timstamp.vim".
