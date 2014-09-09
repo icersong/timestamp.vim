@@ -124,6 +124,11 @@ function s:timestamp()
         return
     endif
 
+    " Ignore if buffer is not modified
+    if !&modified
+        return
+    endif
+
     " If running for the first time, initialise script variables.
     if !exists('s:timestamp_regexp')
         call s:initialise()
@@ -163,9 +168,6 @@ function s:timestamp()
     else
         call s:subst(1, line('$'), pat, rep)
     endif
-
-    " timestamp counter by icersong
-    " call s:timestamp_and_writecounter()
 endfunction
 
 " {{{1 subst( start, end, pat, rep): substitute on range start - end.
@@ -183,23 +185,6 @@ function s:subst(start, end, pat, rep)
         endif
         let lineno = lineno + 1
     endwhile
-endfunction
-" }}}1
-
-" timestamp counter by icersong
-" {{{1 timestamp_and_writecounter():
-function s:timestamp_and_writecounter()
-  if ( &modified )
-    let l:r = line('.')
-    let l:c = col('.')
-    let l:s = '1,'.min([len(getbufline('%', 1, '$')), 16]).'s'
-    let l:s .= '/\(^.\{0,8\}\(modified\|changed\): \)\(TIMESTAMP\|\d\{4\}\(\/\|-\)\d\d\(\/\|-\)\d\d\( \d\d:\d\d:\d\d\)\?\)'
-    let l:s .= '\( \[\(\d\+\)\]\)\?.\{0,16\}$'
-    let l:s .= "/\\=submatch(1).strftime('%Y-%m-%d %H:%M:%S').' ['.(submatch(8)+1).']'/ie"
-    exe l:s
-    call cursor(l:r, l:c)
-    return l:s
-  endif
 endfunction
 " }}}1
 
